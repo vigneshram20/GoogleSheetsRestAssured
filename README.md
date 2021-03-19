@@ -10,7 +10,9 @@
 
 5.Download the client secret.json and place in JAVA project root folder 
 
+
 #Steps to create and share the spreadsheet to the service account 
+
 
 1.Create a spreadsheet in our primary account. 
 
@@ -18,7 +20,9 @@
 
 3.Copy the id of the spreadsheet from the URL. 
 
+
 #Google API Dependency JARS 
+
 
 <dependency> 
 
@@ -53,6 +57,7 @@
  
 
 #Google sheets API authorization flow 
+
 
 1.Getting Credential instance by passing client secret and client id 
 
