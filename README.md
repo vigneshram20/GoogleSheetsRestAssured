@@ -1,24 +1,24 @@
-Steps to create google developer service account  
+#Steps to create google developer service account  
 
-Navigate to https://console.developers.google.com/ 
+1.Navigate to https://console.developers.google.com/ 
 
-Create a New Project 
+2.Create a New Project 
 
-Navigate to Credentials 
+3.Navigate to Credentials 
 
-Create New Service Account 
+4.Create New Service Account 
 
-Download the client secret.json and place in JAVA project root folder 
+5.Download the client secret.json and place in JAVA project root folder 
 
-Steps to create and share the spreadsheet to the service account 
+#Steps to create and share the spreadsheet to the service account 
 
-Create a spreadsheet in our primary account. 
+1.Create a spreadsheet in our primary account. 
 
-Share the spreadsheet with the service account we just created 
+2.Share the spreadsheet with the service account we just created 
 
-Copy the id of the spreadsheet from the URL. 
+3.Copy the id of the spreadsheet from the URL. 
 
-Google API Dependency JARS 
+#Google API Dependency JARS 
 
 <dependency> 
 
@@ -52,15 +52,15 @@ Google API Dependency JARS
 
  
 
-Google sheets API authorization flow 
+#Google sheets API authorization flow 
 
-Getting Credential instance by passing client secret and client id 
+1.Getting Credential instance by passing client secret and client id 
 
-Getting Spreadsheet instance by passing Credential instance along with Project Name 
+2.Getting Spreadsheet instance by passing Credential instance along with Project Name 
 
-Create New Sheet using BatchUpdate method with the help of spreadsheetID 
+3.Create New Sheet using BatchUpdate method with the help of spreadsheetID 
 
-Retrieve or Insert values as Range using the Spreadsheet instance. 
+4.Retrieve or Insert values as Range using the Spreadsheet instance. 
 
  
  
