@@ -18,17 +18,49 @@ import org.testng.annotations.Test;
 import io.restassured.response.Response;
 
 public class BestBuyAPITests extends BaseTest{
+	
+	/**
+	 * Prerequisite :
+	 * 
+	 ------BEST BUY API PLAYGROUND:
+	 
+	 1) Clone BestBuy API Playground from the below github URI 
+	      https://github.com/BestBuy/api-playground
+	 2) Install NodeJS v4 and above in your system
+	 3) Navigate to the api-playground project folder and execute the below commands in command prompt
+	 4)   cd api-playground
+		  npm install
+		  npm start
+	 5) Now your api playground will be started running in the http://localhost:3030
+	 
+	 -----STEPS TO CREATE GOOGLE DEVELOPER SERVICE ACCOUNT:
+	 
+	 1) Navigate to https://console.developers.google.com/
+	 2)  Create a New Project
+	 3) Navigate to Credentials
+     4) Create New Service Account
+     5) Download the client secret.json and place in JAVA project root folder
+     
+     -----STEPS TO CREATE AND SHARE THE SPREADSHEET TO THE SERVICE ACCOUNT:
+     
+     1) Create a spreadsheet in our primary account.(your own account)
+     2) Share the spreadsheet with the service account we just created (service account id we have created in the previous step)
+     3) Copy the id of the spreadsheet from the URL.
+     
+     
+	 
+	 */
 
 	@Test(dataProvider = "dataProviderForIterations")
 	public void getProducts(Hashtable<String , String> data, Method m) throws IOException, GeneralSecurityException {
 		
 		Response response=	given().log().all()
-				.get(data.get("RequestURI"));
+				.get(data.get("EndPoint"));
 
 		//Asserting status code
 		response.then().statusCode(200);
 		
-		List<Object> outputData =Arrays.asList(m.getName(),data.get("RequestURI"),response.statusCode(),"Passed");
+		List<Object> outputData =Arrays.asList(m.getName(),data.get("EndPoint"),response.statusCode(),"Passed");
 		
 		new GoogleSheets().writeDataGoogleSheets(dateFormatted,outputData);
 		
